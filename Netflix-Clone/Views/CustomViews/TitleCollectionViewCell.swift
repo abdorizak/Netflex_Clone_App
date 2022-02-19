@@ -33,9 +33,9 @@ class TitleCollectionViewCell: UICollectionViewCell {
     }
     
     public func configure(with model: String) {
-//        guard let image = URL(string: model) else { return }
-//        posterImageView.sd_setImage(with: image, completed: nil)
-        print(model)
+        guard let image = URL(string: Constants.Poster_Image + "\(model)") else { return }
+        posterImageView.sd_setImage(with: image, completed: nil)
+//        print(model)
     }
     
 }

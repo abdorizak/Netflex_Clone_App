@@ -80,18 +80,15 @@
 		10F7401B27BD3CA600948DA9 /* Netflix-Clone */ = {
 			isa = PBXGroup;
 			children = (
+				10F7403C27BD534200948DA9 /* Resources */,
 				10F7405327C12FCD00948DA9 /* Utilits */,
 				10F7404727C09F7F00948DA9 /* Extentions */,
 				10F7403D27BD535500948DA9 /* Network Manager */,
-				10F7403C27BD534200948DA9 /* Resources */,
 				10F7403B27BD52FF00948DA9 /* Models */,
 				10F7403A27BD52F200948DA9 /* ViewModels */,
 				10F7403927BD52DB00948DA9 /* Views */,
 				10F7403027BD3F3B00948DA9 /* Controllers */,
-				10F7401E27BD3CA600948DA9 /* SceneDelegate.swift */,
-				10F7401C27BD3CA600948DA9 /* AppDelegate.swift */,
 				10F7402027BD3CA600948DA9 /* MainTabBarViewController.swift */,
-				10F7402527BD3CA700948DA9 /* Assets.xcassets */,
 				10F7402727BD3CA700948DA9 /* LaunchScreen.storyboard */,
 				10F7402A27BD3CA700948DA9 /* Info.plist */,
 			);
@@ -136,6 +133,9 @@
 		10F7403C27BD534200948DA9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				10F7401E27BD3CA600948DA9 /* SceneDelegate.swift */,
+				10F7401C27BD3CA600948DA9 /* AppDelegate.swift */,
+				10F7402527BD3CA700948DA9 /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
