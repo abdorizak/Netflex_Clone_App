@@ -36,17 +36,6 @@ class HomeViewController: UIViewController {
         congigureNavBar()
         let headerView = HeroHeaderView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
         homeFeedTable.tableHeaderView = headerView
-         
-         fetchData()
-    }
-    
-    private func fetchData() {
-        
-        APICaller.shared.getTopRated { _ in
-            
-        }
-        
-        
     }
 
     
@@ -137,11 +126,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 300
+        return 330
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40
+        return 50
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

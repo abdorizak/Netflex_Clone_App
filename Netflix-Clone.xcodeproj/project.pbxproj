@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10118C9727C152AA005166AF /* TitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10118C9627C152AA005166AF /* TitleViewModel.swift */; };
+		10118C9927C21604005166AF /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10118C9827C21604005166AF /* SearchResultsViewController.swift */; };
 		10F7401D27BD3CA600948DA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F7401C27BD3CA600948DA9 /* AppDelegate.swift */; };
 		10F7401F27BD3CA600948DA9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F7401E27BD3CA600948DA9 /* SceneDelegate.swift */; };
 		10F7402127BD3CA600948DA9 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F7402027BD3CA600948DA9 /* MainTabBarViewController.swift */; };
@@ -25,9 +27,12 @@
 		10F7404E27C1145F00948DA9 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 10F7404D27C1145F00948DA9 /* SDWebImage */; };
 		10F7405027C1145F00948DA9 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 10F7404F27C1145F00948DA9 /* SDWebImageMapKit */; };
 		10F7405227C12ECD00948DA9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F7405127C12ECD00948DA9 /* Constants.swift */; };
+		10F7405527C14D5D00948DA9 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F7405427C14D5D00948DA9 /* TitleTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10118C9627C152AA005166AF /* TitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewModel.swift; sourceTree = "<group>"; };
+		10118C9827C21604005166AF /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		10F7401927BD3CA600948DA9 /* Netflix-Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Netflix-Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		10F7401C27BD3CA600948DA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10F7401E27BD3CA600948DA9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +51,7 @@
 		10F7404827C09F9E00948DA9 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		10F7404A27C1035100948DA9 /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
 		10F7405127C12ECD00948DA9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		10F7405427C14D5D00948DA9 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +67,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10118C9A27C21662005166AF /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				10F7403127BD3F5B00948DA9 /* HomeViewController.swift */,
+				10F7403327BD3F9B00948DA9 /* UpCommingViewController.swift */,
+				10F7403527BD400D00948DA9 /* SearchViewController.swift */,
+				10F7403727BD402000948DA9 /* DownloadViewController.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		10118C9B27C21670005166AF /* General */ = {
+			isa = PBXGroup;
+			children = (
+				10118C9827C21604005166AF /* SearchResultsViewController.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
 		10F7401027BD3CA600948DA9 = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +115,7 @@
 				10F7403027BD3F3B00948DA9 /* Controllers */,
 				10F7402027BD3CA600948DA9 /* MainTabBarViewController.swift */,
 				10F7402727BD3CA700948DA9 /* LaunchScreen.storyboard */,
+				10F7402527BD3CA700948DA9 /* Assets.xcassets */,
 				10F7402A27BD3CA700948DA9 /* Info.plist */,
 			);
 			path = "Netflix-Clone";
@@ -98,10 +124,8 @@
 		10F7403027BD3F3B00948DA9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				10F7403127BD3F5B00948DA9 /* HomeViewController.swift */,
-				10F7403327BD3F9B00948DA9 /* UpCommingViewController.swift */,
-				10F7403527BD400D00948DA9 /* SearchViewController.swift */,
-				10F7403727BD402000948DA9 /* DownloadViewController.swift */,
+				10118C9B27C21670005166AF /* General */,
+				10118C9A27C21662005166AF /* Core */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -118,6 +142,7 @@
 		10F7403A27BD52F200948DA9 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				10118C9627C152AA005166AF /* TitleViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -135,7 +160,6 @@
 			children = (
 				10F7401E27BD3CA600948DA9 /* SceneDelegate.swift */,
 				10F7401C27BD3CA600948DA9 /* AppDelegate.swift */,
-				10F7402527BD3CA700948DA9 /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -153,6 +177,7 @@
 			children = (
 				10F7403F27BD53C000948DA9 /* CollectionViewTableCell.swift */,
 				10F7404A27C1035100948DA9 /* TitleCollectionViewCell.swift */,
+				10F7405427C14D5D00948DA9 /* TitleTableViewCell.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -251,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10F7403627BD400D00948DA9 /* SearchViewController.swift in Sources */,
+				10118C9927C21604005166AF /* SearchResultsViewController.swift in Sources */,
 				10F7404B27C1035100948DA9 /* TitleCollectionViewCell.swift in Sources */,
 				10F7402127BD3CA600948DA9 /* MainTabBarViewController.swift in Sources */,
 				10F7404027BD53C000948DA9 /* CollectionViewTableCell.swift in Sources */,
@@ -260,8 +286,10 @@
 				10F7404927C09F9E00948DA9 /* String+Ext.swift in Sources */,
 				10F7403827BD402000948DA9 /* DownloadViewController.swift in Sources */,
 				10F7401D27BD3CA600948DA9 /* AppDelegate.swift in Sources */,
+				10F7405527C14D5D00948DA9 /* TitleTableViewCell.swift in Sources */,
 				10F7401F27BD3CA600948DA9 /* SceneDelegate.swift in Sources */,
 				10F7405227C12ECD00948DA9 /* Constants.swift in Sources */,
+				10118C9727C152AA005166AF /* TitleViewModel.swift in Sources */,
 				10F7404627BFA8A700948DA9 /* Movie.swift in Sources */,
 				10F7403227BD3F5B00948DA9 /* HomeViewController.swift in Sources */,
 			);
