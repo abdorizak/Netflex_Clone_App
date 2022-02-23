@@ -45,7 +45,6 @@ class TitleTableViewCell: UITableViewCell {
     
     private func applyConstraints() {
         NSLayoutConstraint.activate([
-//            titlesPosterUIImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 10),
             titlesPosterUIImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             titlesPosterUIImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant:  10),
             titlesPosterUIImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
