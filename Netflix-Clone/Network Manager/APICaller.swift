@@ -179,9 +179,9 @@ final class APICaller {
         }.resume()
     }
     
-    func getMovie(with query: String) {
+    func getMovie(with query: String, completion: @escaping (Result<VideoElement, Error>) -> Void) {
         guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return }
-        guard let url = URL(string: "\(Constants.YoutubeBaseURL)q=\(query)=[\(Constants.YoutubeAPI_KEY)]") else { return }
+        guard let url = URL(string: "\(Constants.YoutubeBaseURL)q=\(query)&key=\(Constants.YoutubeAPI_KEY)") else { return }
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -191,12 +191,16 @@ final class APICaller {
             guard let data = data, error == nil else { return }
             
             do {
-                let result = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
-                print(result)
+                let result = try JSONDecoder().decode(YoutubeSearchResponse.self, from: data)
+                completion(.success(result.items[0]))
             } catch {
+                completion(.failure(error))
                 print(error.localizedDescription)
             }
         }.resume()
     }
+    
+    
+    
 }
 
