@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		10118C9727C152AA005166AF /* TitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10118C9627C152AA005166AF /* TitleViewModel.swift */; };
 		10118C9927C21604005166AF /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10118C9827C21604005166AF /* SearchResultsViewController.swift */; };
+		10118C9D27C3DF09005166AF /* YouTubeTitleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10118C9C27C3DF09005166AF /* YouTubeTitleResponse.swift */; };
+		10118C9F27C41B11005166AF /* TitlePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10118C9E27C41B11005166AF /* TitlePreviewViewController.swift */; };
+		10118CA127C56EE1005166AF /* TitlePreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10118CA027C56EE1005166AF /* TitlePreviewViewModel.swift */; };
 		10F7401D27BD3CA600948DA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F7401C27BD3CA600948DA9 /* AppDelegate.swift */; };
 		10F7401F27BD3CA600948DA9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F7401E27BD3CA600948DA9 /* SceneDelegate.swift */; };
 		10F7402127BD3CA600948DA9 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F7402027BD3CA600948DA9 /* MainTabBarViewController.swift */; };
@@ -33,6 +36,9 @@
 /* Begin PBXFileReference section */
 		10118C9627C152AA005166AF /* TitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewModel.swift; sourceTree = "<group>"; };
 		10118C9827C21604005166AF /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
+		10118C9C27C3DF09005166AF /* YouTubeTitleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeTitleResponse.swift; sourceTree = "<group>"; };
+		10118C9E27C41B11005166AF /* TitlePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePreviewViewController.swift; sourceTree = "<group>"; };
+		10118CA027C56EE1005166AF /* TitlePreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePreviewViewModel.swift; sourceTree = "<group>"; };
 		10F7401927BD3CA600948DA9 /* Netflix-Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Netflix-Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		10F7401C27BD3CA600948DA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10F7401E27BD3CA600948DA9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				10118C9827C21604005166AF /* SearchResultsViewController.swift */,
+				10118C9E27C41B11005166AF /* TitlePreviewViewController.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -143,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				10118C9627C152AA005166AF /* TitleViewModel.swift */,
+				10118CA027C56EE1005166AF /* TitlePreviewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -151,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				10F7404527BFA8A700948DA9 /* Movie.swift */,
+				10118C9C27C3DF09005166AF /* YouTubeTitleResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -280,9 +289,11 @@
 				10F7404B27C1035100948DA9 /* TitleCollectionViewCell.swift in Sources */,
 				10F7402127BD3CA600948DA9 /* MainTabBarViewController.swift in Sources */,
 				10F7404027BD53C000948DA9 /* CollectionViewTableCell.swift in Sources */,
+				10118C9D27C3DF09005166AF /* YouTubeTitleResponse.swift in Sources */,
 				10F7404427BE8DC100948DA9 /* APICaller.swift in Sources */,
 				10F7403427BD3F9B00948DA9 /* UpCommingViewController.swift in Sources */,
 				10F7404227BD807600948DA9 /* HeroHeaderView.swift in Sources */,
+				10118C9F27C41B11005166AF /* TitlePreviewViewController.swift in Sources */,
 				10F7404927C09F9E00948DA9 /* String+Ext.swift in Sources */,
 				10F7403827BD402000948DA9 /* DownloadViewController.swift in Sources */,
 				10F7401D27BD3CA600948DA9 /* AppDelegate.swift in Sources */,
@@ -291,6 +302,7 @@
 				10F7405227C12ECD00948DA9 /* Constants.swift in Sources */,
 				10118C9727C152AA005166AF /* TitleViewModel.swift in Sources */,
 				10F7404627BFA8A700948DA9 /* Movie.swift in Sources */,
+				10118CA127C56EE1005166AF /* TitlePreviewViewModel.swift in Sources */,
 				10F7403227BD3F5B00948DA9 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
