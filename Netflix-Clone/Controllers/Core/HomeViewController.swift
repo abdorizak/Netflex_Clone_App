@@ -19,6 +19,9 @@ enum Sections: Int {
 
 class HomeViewController: UIViewController {
     
+    private var rondomTrendingMovie: Title?
+    private var hederView: HeroHeaderView?
+    
     let sectionTitles:[String] = ["Trending Movies", "Popular Movies", "Trending Tv", "Up Comming Movies", "Top rated"]
     
     private let homeFeedTable: UITableView = {
@@ -28,14 +31,26 @@ class HomeViewController: UIViewController {
     }()
     
      override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-        view.addSubview(homeFeedTable)
-        homeFeedTable.delegate = self
-        homeFeedTable.dataSource = self
-        congigureNavBar()
-        let headerView = HeroHeaderView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
-        homeFeedTable.tableHeaderView = headerView
+         super.viewDidLoad()
+         view.backgroundColor = .systemBackground
+         view.addSubview(homeFeedTable)
+         homeFeedTable.delegate = self
+         homeFeedTable.dataSource = self
+         congigureNavBar()
+         let headerView = HeroHeaderView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
+         homeFeedTable.tableHeaderView = headerView
+         
+    }
+    
+    private func configureHeroHeader() {
+        APICaller.shared.getTrendingMovies { result in
+            switch result {
+            case .success(let title):
+                self.rondomTrendingMovie = title.randomElement()
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
     }
 
     
@@ -43,12 +58,10 @@ class HomeViewController: UIViewController {
         var logo =  UIImage(named: "netflix_logo")
         logo = logo?.withRenderingMode(.alwaysOriginal)
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: logo, landscapeImagePhone: logo, style: .plain, target: self, action: nil)
-        
         navigationItem.rightBarButtonItems = [
             UIBarButtonItem(image: UIImage(systemName: "person"), style: .plain, target: self, action: nil),
             UIBarButtonItem(image: UIImage(systemName: "play.fill"), style: .plain, target: self, action: nil)
         ]
-        
         navigationController?.navigationBar.tintColor = .white
     }
     
@@ -56,7 +69,6 @@ class HomeViewController: UIViewController {
         super.viewDidLayoutSubviews()
         homeFeedTable.frame = view.bounds
     }
-    
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
@@ -71,7 +83,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CollectionViewTableCell.identifier, for: indexPath) as! CollectionViewTableCell
-        
+        cell.delegate = self
         switch indexPath.section {
             case Sections.TrendingMovies.rawValue:
                 APICaller.shared.getTrendingMovies { result in
@@ -154,5 +166,18 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         navigationController?.navigationBar.transform = .init(translationX: 0, y: min(0, -offset))
         
     }
+    
+}
+
+
+extension HomeViewController: CollectionViewTableCellDelegate {
+    func CollectionViewTableCellDidTapCell(_ cell: CollectionViewTableCell, viewModel: TitlePreviewViewModel) {
+        DispatchQueue.main.async { [weak self] in
+            let vc = TitlePreviewViewController()
+            vc.configure(with: viewModel)
+            self?.navigationController?.pushViewController(vc, animated: true )
+        }
+    }
+    
     
 }
