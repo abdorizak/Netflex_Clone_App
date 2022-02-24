@@ -11,9 +11,6 @@ class HeroHeaderView: UIView {
     
     private let downloadBtn: UIButton = {
        let download = UIButton()
-//        let boldConfig = UIImage.SymbolConfiguration(weight: .bold)
-//        let boldSearch = UIImage(systemName: "arrow.down.circle", withConfiguration: boldConfig)
-//        download.setImage(boldSearch, for: .normal)
         download.setTitle("Download", for: .normal)
         download.setTitleColor(UIColor.black, for: .normal)
         download.backgroundColor = .white
@@ -66,12 +63,22 @@ class HeroHeaderView: UIView {
             ])
     }
     
+    public func configureHeader(with model: TitleViewModel) {
+        guard let url = URL(string: Constants.Poster_Image + "\(model.posterURL)") else { return }
+        heroImageVIew.sd_setImage(with: url, completed: nil)
+    }
+    
     private func addGradient() {
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [
             UIColor.clear.cgColor,
             UIColor.black.cgColor
         ]
+        gradientLayer.type = .axial
+//        gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
+        gradientLayer.endPoint = .init(x: 0, y: 1)
+        gradientLayer.opacity = 1
         gradientLayer.frame = bounds
         layer.addSublayer(gradientLayer)
     }
