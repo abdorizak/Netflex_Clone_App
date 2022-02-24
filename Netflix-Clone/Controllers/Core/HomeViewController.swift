@@ -7,6 +7,7 @@
 
 import UIKit
 import SDWebImage
+import ProgressHUD
 
 enum Sections: Int {
     case TrendingMovies = 0
@@ -20,7 +21,7 @@ enum Sections: Int {
 class HomeViewController: UIViewController {
     
     private var rondomTrendingMovie: Title?
-    private var hederView: HeroHeaderView?
+    private var headerView: HeroHeaderView?
     
     let sectionTitles:[String] = ["Trending Movies", "Popular Movies", "Trending Tv", "Up Comming Movies", "Top rated"]
     
@@ -37,16 +38,19 @@ class HomeViewController: UIViewController {
          homeFeedTable.delegate = self
          homeFeedTable.dataSource = self
          congigureNavBar()
-         let headerView = HeroHeaderView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
+         headerView = HeroHeaderView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
          homeFeedTable.tableHeaderView = headerView
-         
+         configureHeroHeader()
     }
     
     private func configureHeroHeader() {
         APICaller.shared.getTrendingMovies { result in
             switch result {
-            case .success(let title):
-                self.rondomTrendingMovie = title.randomElement()
+            case .success(let titles):
+                let selectedTitles = titles.randomElement()
+                
+                self.rondomTrendingMovie = selectedTitles
+                self.headerView?.configureHeader(with: TitleViewModel(titleName: selectedTitles?.original_title ?? "", posterURL: selectedTitles?.poster_path ?? "" ))
             case .failure(let err):
                 print(err.localizedDescription)
             }
