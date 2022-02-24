@@ -12,6 +12,7 @@
 		10118C9D27C3DF09005166AF /* YouTubeTitleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10118C9C27C3DF09005166AF /* YouTubeTitleResponse.swift */; };
 		10118C9F27C41B11005166AF /* TitlePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10118C9E27C41B11005166AF /* TitlePreviewViewController.swift */; };
 		10118CA127C56EE1005166AF /* TitlePreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10118CA027C56EE1005166AF /* TitlePreviewViewModel.swift */; };
+		109044DA27C699BB0001631F /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 109044D927C699BB0001631F /* ProgressHUD */; };
 		10F7401D27BD3CA600948DA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F7401C27BD3CA600948DA9 /* AppDelegate.swift */; };
 		10F7401F27BD3CA600948DA9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F7401E27BD3CA600948DA9 /* SceneDelegate.swift */; };
 		10F7402127BD3CA600948DA9 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F7402027BD3CA600948DA9 /* MainTabBarViewController.swift */; };
@@ -65,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				109044DA27C699BB0001631F /* ProgressHUD in Frameworks */,
 				10F7405027C1145F00948DA9 /* SDWebImageMapKit in Frameworks */,
 				10F7404E27C1145F00948DA9 /* SDWebImage in Frameworks */,
 			);
@@ -226,6 +228,7 @@
 			packageProductDependencies = (
 				10F7404D27C1145F00948DA9 /* SDWebImage */,
 				10F7404F27C1145F00948DA9 /* SDWebImageMapKit */,
+				109044D927C699BB0001631F /* ProgressHUD */,
 			);
 			productName = "Netflix-Clone";
 			productReference = 10F7401927BD3CA600948DA9 /* Netflix-Clone.app */;
@@ -257,6 +260,7 @@
 			mainGroup = 10F7401027BD3CA600948DA9;
 			packageReferences = (
 				10F7404C27C1145F00948DA9 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				109044D827C699BB0001631F /* XCRemoteSwiftPackageReference "ProgressHUD" */,
 			);
 			productRefGroup = 10F7401A27BD3CA600948DA9 /* Products */;
 			projectDirPath = "";
@@ -515,6 +519,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		109044D827C699BB0001631F /* XCRemoteSwiftPackageReference "ProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/relatedcode/ProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 13.0.0;
+			};
+		};
 		10F7404C27C1145F00948DA9 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
@@ -526,6 +538,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		109044D927C699BB0001631F /* ProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 109044D827C699BB0001631F /* XCRemoteSwiftPackageReference "ProgressHUD" */;
+			productName = ProgressHUD;
+		};
 		10F7404D27C1145F00948DA9 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 10F7404C27C1145F00948DA9 /* XCRemoteSwiftPackageReference "SDWebImage" */;
