@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class SearchViewController: UIViewController {
     
@@ -103,6 +104,34 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource, UISe
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 50
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let title = titles[indexPath.row]
+        
+        guard let titleName = title.original_title ?? title.original_name else { return }
+        
+        APICaller.shared.getMovie(with: titleName) { [weak self] result in
+            switch result {
+            case .success(let vedioElement):
+                ProgressHUD.show()
+//                DispatchQueue.main.async {
+//                    let vc = TitlePreviewViewController()
+//                    vc.configure(with: TitlePreviewViewModel(title: titleName, youtubeView: vedioElement, titleOverview: title.overview ?? ""))
+//                    self?.navigationController?.pushViewController(vc, animated: true)
+//                    ProgressHUD.dismiss()
+//                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    let vc = TitlePreviewViewController()
+                    vc.configure(with: TitlePreviewViewModel(title: titleName, youtubeView: vedioElement, titleOverview: title.overview ?? ""))
+                    self?.navigationController?.pushViewController(vc, animated: true)
+                    ProgressHUD.dismiss()
+                }
+                
+            case .failure(let err):
+                print(err)
+            }
+        }
     }
     
 }
